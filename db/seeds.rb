@@ -24,7 +24,7 @@ more_movies = [
     :release_date => '19-Jul-2019'},
   {:title => 'Your Name', :rating => 'PG',
     :release_date => '03-Jul-2016'},
-  {:title => 'The Classic', :rating => 'PG-13',
+  {:title => 'The Pursuit of Happyness', :rating => 'PG-13',
     :release_date => '15-Dec-2006' }
 ]
 
