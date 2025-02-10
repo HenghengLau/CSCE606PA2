@@ -12,17 +12,16 @@
       <th>Release Date</th>
     </tr>
   </thead>
-</table>
 
-<tbody>
-<% @movies.each do |movie| %>
-  <tr>
-    <td><%= movie.title %></td>
-    <td><%= movie.rating %></td>
-    <td><%= movie.release_date %></td>
-  </tr>
-<% end %>
-</tbody>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.release_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to "New movie", new_movie_path %>
