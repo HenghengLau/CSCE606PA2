@@ -7,9 +7,21 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
+      <th>
+        <% current_order = (params[:sort_col].to_i == 0 ? params[:sort_order].to_i : 0) %>
+        <% new_order = current_order == 0 ? 1 : 0 %>
+        <%= link_to "Title", movies_path(sort_col: 0, sort_order: new_order) %>
+      </th>
+      <th>
+        <% current_order = (params[:sort_col].to_i == 1 ? params[:sort_order].to_i : 0) %>
+        <% new_order = current_order == 0 ? 1 : 0 %>
+        <%= link_to "Rating", movies_path(sort_col: 1, sort_order: new_order) %>
+      </th>
+      <th>
+        <% current_order = (params[:sort_col].to_i == 2 ? params[:sort_order].to_i : 0) %>
+        <% new_order = current_order == 0 ? 1 : 0 %>
+        <%= link_to "Release Date", movies_path(sort_col: 2, sort_order: new_order) %>
+      </th>
     </tr>
   </thead>
 

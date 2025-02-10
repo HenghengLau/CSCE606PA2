@@ -3,7 +3,10 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    col = %w[title rating release_date]
+    sorting = %w[asc desc]
+    @movies = Movie.order(col[params[:sort_col].to_i].send(sorting[params[:sort_order].to_i]))
+    # @movies = Movie.all
   end
 
   # GET /movies/1 or /movies/1.json
