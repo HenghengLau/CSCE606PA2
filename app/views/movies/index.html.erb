@@ -28,7 +28,7 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= link_to "Show this movie", movie.title %></td>
+        <td><%= link_to movie.title, movie %></td>
         <td><%= movie.rating %></td>
         <td><%= movie.release_date %></td>
       </tr>
