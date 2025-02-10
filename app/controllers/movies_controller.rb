@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   def index
     col = %w[title rating release_date]
     sorting = %w[asc desc]
-    @movies = Movie.order(col[params[:sort_col].to_i].send(sorting[params[:sort_order].to_i]))
+    @movies = Movie.order("#{col[params[:sort_col].to_i]} #{sorting[params[:sort_order].to_i]}")
     # @movies = Movie.all
   end
 
