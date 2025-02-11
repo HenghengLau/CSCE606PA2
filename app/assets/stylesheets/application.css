@@ -14,4 +14,9 @@
     background-color: lightgrey;
  }
 
+ button {
+    padding: 5px;
+    font-size: 40px;
+ }
+
  @import "index.css";
