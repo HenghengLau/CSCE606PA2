@@ -11,14 +11,17 @@
 
  html {
     text-align: center;
+    background-color: lightgrey;
  }
 
  table {
     margin: 0 auto;
+    min-width: 50%;
  }
- 
+
  table, th, td {
     border: 1px solid black;
+    padding: 10px;
  }
   
  table {
