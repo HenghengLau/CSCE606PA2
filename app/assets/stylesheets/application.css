@@ -8,3 +8,16 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ html {
+    text-align: center;
+ }
+
+ table, th, td {
+    border: 1px solid black;
+ }
+  
+ table {
+    border-collapse: collapse;
+ }
+  
