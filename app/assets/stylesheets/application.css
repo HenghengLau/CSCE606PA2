@@ -15,8 +15,9 @@
  }
 
  button {
-    padding: 5px;
+    padding: 20px;
     font-size: 40px;
+    border-radius: 5px;
  }
 
  @import "index.css";
