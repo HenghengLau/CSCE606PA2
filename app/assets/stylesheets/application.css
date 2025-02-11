@@ -14,27 +14,4 @@
     background-color: lightgrey;
  }
 
- h1 {
-    background-color: lightblue;
-    margin-bottom: 50px;
- }
-
- table {
-    margin: 0 auto;
-    min-width: 50%;
- }
-
- table, th, td {
-    border: 1px solid black;
-    padding: 10px;
- }
-  
- table {
-    border-collapse: collapse;
- }
-
- a {
-    font-size: 40px;
-    padding-top: 50px;
- }
-  
+ @import "index.css";
