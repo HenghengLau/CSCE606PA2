@@ -1,7 +1,8 @@
  h1 {
     background-color: lightblue;
     margin-bottom: 50px;
-    padding: 50px;
+    padding: 40px;
+    font-size: 50px;
  }
 
  table {
@@ -16,4 +17,10 @@
   
  table {
     border-collapse: collapse;
+    margin-bottom: 50px;
+ }
+
+ .bottom-link {
+    margin-top: 50px;
+    font-size: 40px;
  }
