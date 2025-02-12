@@ -7,24 +7,24 @@
 <table>
   <thead>
     <tr>
-      <th>
-        <% current_order = (params[:sort_col].to_i == 0 ? params[:sort_order].to_i : 0) %>
-        <% new_order = current_order == 0 ? 1 : 0 %>
-        <%= link_to movies_path(sort_col: 0, sort_order: new_order), style: (params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? "background-color: yellow;" : "background-color: green;") : "") do %>
+      <% title_current_order = (params[:sort_col].to_i == 0 ? params[:sort_order].to_i : 0) %>
+      <% title_new_order = title_current_order == 0 ? 1 : 0 %>
+      <th style="<%= params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? 'background-color: yellow;' : 'background-color: green;') : '' %>">
+        <%= link_to movies_path(sort_col: 0, sort_order: title_new_order) do %>
           Title <%= params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? '▲' : '▼') : '' %>
         <% end %>
       </th>
-      <th>
-        <% current_order = (params[:sort_col].to_i == 1 ? params[:sort_order].to_i : 0) %>
-        <% new_order = current_order == 0 ? 1 : 0 %>
-        <%= link_to movies_path(sort_col: 1, sort_order: new_order), style: (params[:sort_col].to_i == 1 ? (params[:sort_order].to_i == 0 ? "background-color: yellow;" : "background-color: green;") : "") do %>
+      <% rating_current_order = (params[:sort_col].to_i == 1 ? params[:sort_order].to_i : 0) %>
+      <% rating_new_order = rating_current_order == 0 ? 1 : 0 %>
+      <th style="<%= params[:sort_col].to_i == 1 ? (params[:sort_order].to_i == 0 ? 'background-color: yellow;' : 'background-color: green;') : '' %>">
+        <%= link_to movies_path(sort_col: 1, sort_order: rating_new_order) do %>
           Rating <%= params[:sort_col].to_i == 1 ? (params[:sort_order].to_i == 0 ? '▲' : '▼') : '' %>
         <% end %>
       </th>
-      <th>
-        <% current_order = (params[:sort_col].to_i == 2 ? params[:sort_order].to_i : 0) %>
-        <% new_order = current_order == 0 ? 1 : 0 %>
-        <%= link_to movies_path(sort_col: 2, sort_order: new_order), style: (params[:sort_col].to_i == 2 ? (params[:sort_order].to_i == 0 ? "background-color: yellow;" : "background-color: green;") : "") do %>
+      <% release_current_order = (params[:sort_col].to_i == 2 ? params[:sort_order].to_i : 0) %>
+      <% release_new_order = release_current_order == 0 ? 1 : 0 %>
+      <th style="<%= params[:sort_col].to_i == 2 ? (params[:sort_order].to_i == 0 ? 'background-color: yellow;' : 'background-color: green;') : '' %>">
+        <%= link_to movies_path(sort_col: 2, sort_order: release_new_order) do %>
           Release Date <%= params[:sort_col].to_i == 2 ? (params[:sort_order].to_i == 0 ? '▲' : '▼') : '' %>
         <% end %>
       </th>
