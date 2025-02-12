@@ -10,19 +10,23 @@
       <th>
         <% current_order = (params[:sort_col].to_i == 0 ? params[:sort_order].to_i : 0) %>
         <% new_order = current_order == 0 ? 1 : 0 %>
-        <%= link_to movies_path(sort_col: 0, sort_order: new_order), style: (params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? "color: blue;" : "color: red;") : "") do %>
+        <%= link_to movies_path(sort_col: 0, sort_order: new_order), style: (params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? "background-color: yellow;" : "background-color: green;") : "") do %>
           Title <%= params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? '▲' : '▼') : '' %>
         <% end %>
       </th>
       <th>
         <% current_order = (params[:sort_col].to_i == 1 ? params[:sort_order].to_i : 0) %>
         <% new_order = current_order == 0 ? 1 : 0 %>
-        <%= link_to "Rating", movies_path(sort_col: 1, sort_order: new_order) %>
+        <%= link_to movies_path(sort_col: 1, sort_order: new_order), style: (params[:sort_col].to_i == 1 ? (params[:sort_order].to_i == 0 ? "background-color: yellow;" : "background-color: green;") : "") do %>
+          Rating <%= params[:sort_col].to_i == 1 ? (params[:sort_order].to_i == 0 ? '▲' : '▼') : '' %>
+        <% end %>
       </th>
       <th>
         <% current_order = (params[:sort_col].to_i == 2 ? params[:sort_order].to_i : 0) %>
         <% new_order = current_order == 0 ? 1 : 0 %>
-        <%= link_to "Release Date", movies_path(sort_col: 2, sort_order: new_order) %>
+        <%= link_to movies_path(sort_col: 2, sort_order: new_order), style: (params[:sort_col].to_i == 2 ? (params[:sort_order].to_i == 0 ? "background-color: yellow;" : "background-color: green;") : "") do %>
+          Release Date <%= params[:sort_col].to_i == 2 ? (params[:sort_order].to_i == 0 ? '▲' : '▼') : '' %>
+        <% end %>
       </th>
     </tr>
   </thead>
@@ -30,9 +34,15 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= link_to movie.title, movie %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.release_date.strftime("%Y-%m-%d") %></td>
+        <td style="<%= params[:sort_col].to_i == 0 ? (params[:sort_order].to_i == 0 ? 'background-color: yellow;' : 'background-color: green;') : '' %>">
+          <%= link_to movie.title, movie %>
+        </td>
+        <td style="<%= params[:sort_col].to_i == 1 ? (params[:sort_order].to_i == 0 ? 'background-color: yellow;' : 'background-color: green;') : '' %>">
+          <%= movie.rating %>
+        </td>
+        <td style="<%= params[:sort_col].to_i == 2 ? (params[:sort_order].to_i == 0 ? 'background-color: yellow;' : 'background-color: green;') : '' %>">
+          <%= movie.release_date.strftime("%Y-%m-%d") %>
+        </td>
       </tr>
     <% end %>
   </tbody>
